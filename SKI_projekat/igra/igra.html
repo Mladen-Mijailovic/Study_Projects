@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shorcut icon" type="x-icon" href="/index_slike/tab_slika.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра</title>
+    <link rel="stylesheet" href="styleIgra.css">
+    <script src="scriptIgra.js" defer></script>
+</head>
+<body>
+    <header>
+        <!-- Navigacioni meni -->
+        <nav class="navigac">
+            <div id="home"><a href="/index.html"><img src="/index_slike/home1R.png" alt="home.png" onmouseover="hover(this)" onmouseout="unhover(this)"></a></div>
+            <div id="linkovi">
+                <ul>
+                    <li><a href="/galerija/galerija.html" class="meni">Галерија🖼️</a></li>
+                    <li><a href="/order/order.html" class="meni">Наручите🍕</a></li>
+                    <li><a href="igra.html" class="meni">Игра🕹️</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="prikaz">
+            <div id="igra"></div>
+            <div id="score">Score: 0</div>
+            <div id="vremeDiv">Време: <p id="vreme">10.0</p></div>
+            <div id="rezultati"></div>
+            <button id="start" class="dugm">Start</button>
+            <button id="reset" class="dugm">Reset</button>
+            <button id="clearDataButton" disabled hidden>OBRISI</button>
+            <span><p id="how">Упутство: <br>Кликом на дугме Start покреће се тајмер и имате 10 сек да кликнете на 16 дугмића.<br><br>Кликом на дугме Reset враћате тајмер на почетак.</p></span>
+        </div>
+    </main>
+
+    <!-- Podaci o autorskim pravima -->
+    <footer>
+        Аутор: Младен Мијаиловић <br>
+        &copy; сва ауторска права задржава власник сајта <br>
+        <small><a href="mailto:mladennrt1422@gs.viser.edu.rs">mladennrt1422@gs.viser.edu.rs</a></small>
+    </footer>
+    
+</body>
+</html>

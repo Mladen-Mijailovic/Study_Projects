@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konj</title>
+    <style>
+        #igra{
+            height: 500px;
+            width: 500px;
+            border: 2px solid black;
+        }
+    </style>
+        <script src="scriptK.js" defer></script>
+</head>
+<body>
+    <p id="timer">Vreme: <output id="vreme"></output></p>
+    <button id="start" onclick="start()">Start</button>
+    <button id="stop" onclick="stop()">Stop</button>
+    
+    <button id="createChessboardBtn">Kreiraj tablicu i konja</button>
+    <div id="chessboard"></div>
+    <script>
+        //prvo def promen
+        var w;
+
+        //Funk za pocetak vrem
+        function start(){
+            //ako nije definisan Worker
+            if(typeof(Worker) !== "undefined"){
+                if(typeof(w) == 'undefined'){
+                    w = new Worker("dw.js")
+                }
+            w.onmessage = function(event){
+                document.getElementById("vreme").innerHTML = event.data;
+            };
+            }else{
+                document.getElementById("vreme").innerText = "No WebWorker!"
+            }
+        }
+
+        function stop(){
+            w.terminate();
+            w = undefined;
+        }
+    </script>
+</body>
+</html>

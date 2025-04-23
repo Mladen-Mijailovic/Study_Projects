@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shorcut icon" type="x-icon" href="/index_slike/tab_slika.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наруџбина</title>
+    <link rel="stylesheet" href="styleO.css">
+    <script src="sccriptO.js" defer></script>
+
+</head>
+<body>
+
+    <header>
+        <!-- Navigacioni meni -->
+        <nav class="navigac">
+            <div id="home"><a href="/index.html"><img src="/index_slike/home1R.png" alt="home.png" onmouseover="hover(this)" onmouseout="unhover(this)"></a></div>
+            <div id="linkovi">
+                <ul>
+                    <li><a href="/galerija/galerija.html" class="meni">Галерија🖼️</a></li>
+                    <li><a href="order.html" class="meni">Наручите🍕</a></li>
+                    <li><a href="/igra/igra.html" class="meni">Игра🕹️</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Porudzbine -->
+    <main>
+        <form action="" onsubmit="return validacija()">
+            <div class="glavni">
+
+                <!-- Porudzbina -->
+                <div id="porudz">
+    
+                    Изаберите величину пице:
+                    <input type="radio" name="velicina" id="22" value="22cm"><!-- nemoj da zaboravis req za polje-->
+                    <label for="22">22cm</label>
+                    <input type="radio" name="velicina" id="32" value="32cm"><!-- nemoj da zaboravis req za polje-->
+                    <label for="32">32cm</label>
+                    <input type="radio" name="velicina" id="32" value="40cm"><!-- nemoj da zaboravis req za polje-->
+                    <label for="40">40cm</label>
+                    <br><br>
+    
+                    Изаберите број пица:
+                    <input type="number" name="kolicina" id="koli" min="1" max="5" placeholder="0" oninput="limitCheckbox(this.value)"><br><br><!-- nemoj da zaboravis req za polje-->
+    
+                    Изаберите врсту пице: <br>  <!--probaj da dodas uslov koji prati u zavisnosti od broja piza koliko max pizza moze da se unese-->
+                    <input type="checkbox" name="Neapolitan" id="neo" onclick="prikazPizze('Neapolitan')"><label for="Neapolitan">Neapolitan Pizza</label><br>
+                    <input type="checkbox" name="NewYork" id="ny" onclick="prikazPizze('NewYork')"><label for="NewYork">New York Style Pizza</label><br>
+                    <input type="checkbox" name="Margherita" id="marg" onclick="prikazPizze('Margherita')"><label for="Margherita">Margherita Pizza</label><br>
+                    <input type="checkbox" name="Sicilian" id="sici" onclick="prikazPizze('Sicilian')"><label for="Sicilian">Sicilian Pizza</label><br>
+                    <input type="checkbox" name="Hawaiian" id="hawa" onclick="prikazPizze('Hawaiian')"><label for="Hawaiian">Hawaiian Pizza</label><br>
+                    <br><br>
+                    Изаберите додатке: <br>
+                    <input type="checkbox" name="pecurke" id="pecurke"><label for="pecurke">Печурке</label>
+                    <input type="checkbox" name="kackavalj" id="kackavalj"><label for="kackavalj">Качкаваљ</label>
+                    <input type="checkbox" name="jaje" id="jaje"><label for="jaje">Јаје</label>
+                    <input type="checkbox" name="kulen" id="kulen"><label for="kulen">Кулен</label>
+                    <input type="checkbox" name="slanina" id="slanina"><label for="slanina">Сланина</label>
+    
+                </div>
+    
+                <!-- Slike -->
+                <div id="slikeP">
+                    <img src="slike/Neapolitan.jpg" alt="Neapolitan Pizza" class="pizzaS" id="imgNeapolitan">
+                    <img src="slike/NewYork.jpg" alt="New York Style Pizza" class="pizzaS" id="imgNewYork">
+                    <img src="slike/Margherita.jpg" alt="Margherita Pizza" class="pizzaS" id="imgMargherita">
+                    <img src="slike/Sicilian.jpg" alt="Sicilian Pizza" class="pizzaS" id="imgSicilian">
+                    <img src="slike/Hawaiian.jpg" alt="Hawaiian Pizza" class="pizzaS" id="imgHawaiian">
+                </div>
+
+                <div id="slikeNam">
+                    <img src="slike/pecurka.png" alt="pecurka" id="dodPecurka" class="dodaci">
+                    <img src="slike/kackavalj.png" alt="kackavalj" id="dodKackavalj" class="dodaci">
+                    <img src="slike/jaje.png" alt="jaje" id="dodJaje" class="dodaci">
+                    <img src="slike/kulen.png" alt="kulen" id="dodKulen" class="dodaci">
+                    <img src="slike/slanina.png" alt="slanina" id="dodSlanina" class="dodaci">
+                </div>
+    
+                <!-- Informacije musterije -->
+                <div id="podaciMusterije">
+                
+                    Унесите Ваше име: <br>
+                    <input type="text" name="name" id="ime" required><br><span id="imeGreska"></span><br><!-- nemoj da zaboravis req za polje-->
+                    Унесите Ваше презиме: <br>
+                    <input type="text" name="surname" id="prezime" required><br><span id="prezimeGre"></span><br><!-- nemoj da zaboravis req za polje-->
+                    Унесите e-mail адресу: <br>
+                    <input type="email" name="email" id="mail" title="Унесите Вашу e-mail адресу" required><br><br><!-- nemoj da zaboravis req za polje-->
+                    Унесите Ваш број телефона: <br>
+                    <input type="tel" name="tel" id="telefon" required title="Унесите број телфона као на пример +3816434123"><br><span id="brTelGre"></span><br><!-- nemoj da zaboravis req za polje-->
+                    Унесите Вашу адресу: <br>
+                    <input type="text" name="adresa" id="adresa" required><br><br><!-- nemoj da zaboravis req za polje-->
+                    <label for="gradovi">Изаберите град:</label><br>
+                    <select name="gradovi" id="gradovi" required> <!-- nemoj da zaboravis req za polje-->
+                        <option value="" disabled selected >Градови</option>
+                        <option value="BG">Београд</option>
+                        <option value="KG">Крагујевац</option>
+                        <option value="LE">Лесковац</option>
+                        <option value="NI">Ниш</option>
+                        <option value="PO">Пожеревац</option>
+                        <option value="SD">Смедерево</option>
+                    </select>
+                </div>
+
+                <input type="submit" name="submit" id="submit" value="Пошаљите наруџбину">
+                <input type="reset" name="reset" id="reset" value="Обришити унос">
+            </div>
+            
+        </form>
+    </main>
+
+    <!-- Podaci o autorskim pravima -->
+    <footer>
+        Аутор: Младен Мијаиловић <br>
+        &copy; сва ауторска права задржава власник сајта <br>
+        <small><a href="mailto:mladennrt1422@gs.viser.edu.rs">mladennrt1422@gs.viser.edu.rs</a></small>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+Uputstva za projekat SKI-2023
+
+- Projekat maksimalno vredi 10 bodova.
+
+- Indeksna stranica ima:
+
+  - header blok
+    - sadrži reklamu kojoj je dodeljen efekat po želji
+
+  - navigacioni blok ima 3 linka iz kombinacije koja vam je dodeljena. ---- ODRADJENO
+  
+ - sekcijski blok koji daje podatke o Vama (studentu) i popis zadataka koje ste radili
+ 
+ - članak blok koji svakih 10 sekundi ispiše 1. od 5 umotvorina (po izboru)
+
+ - footer blok koji sadrži podatke o zaštiti autorskih prava 
+
+- Vraćanje na indeksnu stranicu je klikom na sliku "HOME" na datoj stranici. (bilo koja slika "home" sa interneta) ---- ODRADJENO
+
+-Sajt mora imati (makar minimalni) vizuelni identitet.
+Kombinacije zadataka:
+
+Kombinacija 1
+
+·         link ka galeriji slika (kreirati galeriju sa Vašim efektom odabiranja i pregleda slika).
+
+·         link ka stranici koja sadrži formu za naručivanje hrane, svako ulazno polje se validira.
+
+·         link ka igri "Klikni za 10 sekundi na 16 brojeva u rastućem redosledu", brojevi su raspoređeni slučajno kao matrica 4x4.
+
+//ISPIT
+Set Interval (fora kao za semafor nesto) 
+Page Visibility (blur I focus) 
+Drag&Drop (files)
+Web worker
+Back face visibility
+
+
+//INDEX STRANA
+1. Za home sliku neka tranzicija da se odradi
+2. Umotvorine
+–  Ако чиниш добро, не ударај у велико звоно.
+–  Дрво без гране и човек без мане - не могу бити.
+-  Зло је ко не зна а учити се не да.
+-  Имадох – не знадох, изгубих – познадох.
+-  Истина и жена најлепше су - голе.

@@ -1,0 +1,99 @@
+Animacija, backfaceVisibility
+<!DOCTYPE html>
+<html><head><style>
+div {
+width: 100px; height: 100px; background: red; color: white;
+-webkit-animation: mymove 2s infinite linear alternate; /*CSO*/
+animation: mymove 2s infinite linear alternate;
+}
+@-webkit-keyframes mymove {/*CSO*/
+    to {-webkit-transform: rotateY(180deg);} 
+}
+@keyframes mymove { 
+    to {transform: rotateY(180deg);} 
+}
+</style>
+</head>
+
+<body>
+
+<div id="myDIV"> <h1>Hello</h1></div>
+
+<input type="checkbox" onclick="myFunction(this)"checked>backface-visibility
+
+
+
+<script>
+
+
+// function myFunction(x) {
+//     if (x.checked === true)
+//     document.getElementById("myDIV").style.backfaceVisibility = "visible";
+//     else
+//     document.getElementById("myDIV").style.backfaceVisibility ="hidden";
+// }
+window.addEventListener('blur', visibilityF);
+    function visibilityF(){
+        document.getElementById("myDIV").style.backfaceVisibility = "hidden";
+    }
+window.addEventListener('focus', visibilityF2);
+    function visibilityF2(){
+        document.getElementById("myDIV").style.backfaceVisibility = "visible";
+    }
+</script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en"><head> <meta charset="utf-8"> <title>BF</title>
+<script>
+var state;
+function initiate(){
+addEventListener('blur', function(){ changestate('hidden'); });
+addEventListener('focus',function(){ changestate('visible');});
+document.addEventListener('visibilitychange', function(){ changestate(document.visibilityState);
+});
+}
+function changestate(newstate){
+if(state != newstate){ state = newstate; showstate(); }
+} //sada reaguje i kada se npr. otvara neki fajl
+function showstate(){
+var element = document.getElementById('application');
+element.innerHTML += '<br>' + state;
+}
+addEventListener('load', initiate);
+</script>
+</head>
+<body>
+    
+<p>Brojac: <output id="result"></output></p><br>
+<button onclick="start()">Start</button>
+<button onclick="stop()">Stop</button>
+<script>
+    var w;
+
+    function start(){
+        if(typeof(Worker) !== "undefined"){
+            if(typeof(w) == "undefined"){
+                w = new Worker("dw.js");
+            }
+        w.onmessage = function(event){
+            document.getElementById("result").innerHTML = event.data;
+        };
+        }else{
+            document.getElementById("result").innerHTML = "No WebWorker"
+        }
+    }
+
+    function stop(){
+        w.terminate();
+        w = undefined;
+    }
+</script>
+
+    
+<section id="application"> Move to another window
+to change the visibility state
+</section>
+</body>
+</html>

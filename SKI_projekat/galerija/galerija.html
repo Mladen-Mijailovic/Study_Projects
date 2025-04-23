@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shorcut icon" type="x-icon" href="/index_slike/tab_slika.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерија</title>
+    <link rel="stylesheet" href="styleG.css">
+    <script src="scriptG.js" defer></script>
+</head>
+<body>
+    <header>
+        <!-- Navigacioni meni -->
+        <nav class="navigac">
+            <div id="home"><a href="/index.html"><img src="/index_slike/home1R.png" alt="home.png" onmouseover="hover(this)" onmouseout="unhover(this)"></a></div>
+            <div id="linkovi">
+                <ul>
+                    <li><a href="galerija.html" class="meni">Галерија🖼️</a></li>
+                    <li><a href="/order/order.html" class="meni">Наручите🍕</a></li>
+                    <li><a href="/igra/igra.html" class="meni">Игра🕹️</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="prvaGal" class="slider">
+            <div class="list">
+                <div class="item">
+                    <img src="gal_slike/prva.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="gal_slike/druga.jpeg" alt="">
+                </div>
+                <div class="item">
+                    <img src="gal_slike/treca.jpeg" alt="">
+                </div>
+                <div class="item">
+                    <img src="gal_slike/cetvrta.jpeg" alt="">
+                </div>
+                <div class="item">
+                    <img src="gal_slike/peta.webp" alt="">
+                </div>
+            </div>
+            <div class="buttons">
+                <button id="prev">&lt;</button>
+                <button id="next">&gt;</button>
+            </div>
+            <ul class="dots">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </main>
+
+    <!-- Podaci o autorskim pravima -->
+    <footer>
+        Аутор: Младен Мијаиловић <br>
+        &copy; сва ауторска права задржава власник сајта <br>
+        <small><a href="mailto:mladennrt1422@gs.viser.edu.rs">mladennrt1422@gs.viser.edu.rs</a></small>
+    </footer>
+</body>
+</html>
